@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="./bootstrap-4.6.0-dist/bootstrap-4.6.0-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css"  >
+</head>
+<body>
+   <!--FORMULARIO CON BOOTSTRAP Y JAVASCRIPT-->
+   <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-9 col-xl-9 m-5">
+            <div class="card">
+                <div class="card-header bg-danger">
+                   <h3>Cine+</h3>
+                </div>
+                <div class="card-body bg-warning">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Nombre</label>
+                          <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Edad</label>
+                            <input type="number" class="form-control" id="edad">
+                          </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Película que desea ver:</label>
+                            <select class="form-control" id="pelicula">
+                              <option>Seleccione la película</option>
+                              <option value="anabelle">Anabelle</option>
+                              <option value="escuadrons">Escuadrón Suicida</option>
+                              <option value="mulan">Mulán</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Sillas:</label>
+                            <select class="form-control" id="sillas">
+                              <option>Seleccione en que parte desea ver la pelicula</option>
+                              <option value="frente">Sillas de al frente</option>
+                              <option value="medio">Sillas del medio</option>
+                              <option value="atras">Sillas de atrás</option>
+                            </select> 
+                          </div>
+                        <button type="submit" class="btn btn-dark" onclick="validacion()">Enviar</button>
+                      </form>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        function validacion(){
+            let nombre = document.getElementById('nombre').value
+            let edad = document.getElementById('edad').value
+            let pelicula = document.getElementById('pelicula').value
+            let sillas = document.getElementById('sillas').value
+
+
+               
+               if(edad<=3){
+                   alert("No tienes la edad suficiente para entrar al cine"+" "+nombre)
+              }else{
+                  alert("Puedes entrar al cine"+" "+nombre)
+                    if(pelicula=="anabelle"){
+                      alert("Tienes que pagar 30.000")
+                    }if(pelicula=="mulan"){
+                      alert("Tienes que pagar 25.000")
+                    }else if(pelicula=="escuadrons"){
+                      alert("Tienes que pagar 35.000")
+                    }
+                    
+                    if(sillas=="atras"){
+                      alert("Tienes que pagar 5.000 pesos más por la posición de la silla")
+                    }else{
+                      alert("No tienes que pagar de más por la silla")
+                    }
+                }
+          }
+                
+                    
+
+
+
+    </script>
+
+
+    <script src="./js/jquery-3.6.min.js"></script>
+    <script src="./bootstrap-4.6.0-dist/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
